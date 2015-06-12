@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary" >#ffffff</color>
+    <color name="colorPrimaryDark" >#fffff0</color>
+    <color name="cl">#00a9ff</color>
+    <color name="nj">#ff5600</color>
+    <color name="textColorPrimary" >#FFFFFF</color>
+    <color name="background" >#ffffff</color>
+    <color name="backgroundCl" >#00a9ff</color>
+    <color name="backgroundNJ" >#ff5600</color>
+    <color name="title">#37474F</color>
+</resources>
