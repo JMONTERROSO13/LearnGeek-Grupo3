@@ -109,9 +109,9 @@ public class CourseActivity extends ActionBarActivity {
             LayoutInflater inflater = LayoutInflater.from(getContext());
             View item = inflater.inflate(R.layout.listitem_course_lesson, null);
 
-            TextView name = (TextView)item.findViewById(R.id.nameCourseCat);
-            TextView desc = (TextView)item.findViewById(R.id.descriptionCourseCat);
-            TextView ref = (TextView)item.findViewById(R.id.descriptionCourseCat);
+            TextView name = (TextView)item.findViewById(R.id.nameCourseL);
+            TextView desc = (TextView)item.findViewById(R.id.descriptionCourseL);
+            TextView ref = (TextView)item.findViewById(R.id.refL);
             VideoView urlVideo = (VideoView)item.findViewById(R.id.viedoL);
 
 

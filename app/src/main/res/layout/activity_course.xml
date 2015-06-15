@@ -18,7 +18,6 @@
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:text="Category"
-                android:layout_gravity="top"
                 android:background="@color/title"
                 android:textColor="@color/background"
                 android:textSize="15sp"
@@ -27,11 +26,10 @@
             <TextView
                 android:id="@+id/descriptionDetailCourse"
                 android:layout_width="match_parent"
-                android:layout_below="@id/nameDetailCategory"
+                android:layout_below="@id/nameCourseDetail"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
                 android:text="asdfsadf"
-                android:layout_gravity="bottom"
                 android:background="@color/cardBack"
                 android:textColor="@color/cardText"
                 android:textSize="15sp"
@@ -40,8 +38,9 @@
             <ListView
                 android:id="@+id/listCourseDetail"
                 android:layout_width="match_parent"
-                android:layout_below="@id/descriptionDetailCategory"
-                android:layout_height="wrap_content"></ListView>
+                android:layout_below="@id/descriptionDetailCourse"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"></ListView>
 
         </RelativeLayout>
 
