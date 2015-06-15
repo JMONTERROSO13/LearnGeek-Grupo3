@@ -6,4 +6,28 @@
 
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
+
+    <string name="loggin">Logging</string>
+    <string name="user">User Name</string>
+    <string name="password">Password</string>
+    <string name="register">Registrer</string>
+    <string name="rem">Remember me!!</string>
+    <string name="title_activity_register">RegisterActivity</string>
+
+    <string name="password2">Confirm your password</string>
+    <string name="email">Email</string>
+    <string name="createReg">Create User</string>
+    <string name="nameUser">First and Last Name</string>
+
+    <string name="isRemembered">Remember</string>
+    <string name="userRemembered">UserRemember</string>
+    <string name="sharedClass">class</string>
+    <string name="welcome">Welcome to Learn Geek -</string>
+    <string name="setting">Settings</string>
+    <string name="logout">Logout</string>
+    <string name="title_activity_category">CategoryActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_course">CourseActivity</string>
+
 </resources>

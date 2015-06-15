@@ -1,5 +1,9 @@
 package gt.edu.kinal.jmonterroso.learngeek_grupo3;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -11,24 +15,30 @@ import android.view.MenuItem;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import gt.edu.kinal.jmonterroso.learngeek_grupo3.helpers.SQLite;
 
 
 public class MainActivity extends ActionBarActivity  implements NavigationDrawerFragment.FragmentDrawerListener {
 
     private Toolbar mTool;
+    private TextView labelWelcome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mTool = (Toolbar) findViewById(R.id.toolbar);
+        labelWelcome = (TextView) findViewById(R.id.welcome);
 
         setSupportActionBar(mTool);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        SharedPreferences pref = MainActivity.this.getSharedPreferences(getString(R.string.sharedClass), Context.MODE_PRIVATE);
 
-        //Fragment
+        labelWelcome.setText(labelWelcome.getText()+ " " + pref.getString(getString(R.string.userRemembered), "hola"));
+
         NavigationDrawerFragment drawerFragment = (NavigationDrawerFragment)getSupportFragmentManager().findFragmentById(R.id.navigation_drawer_fragmnet);
-
         drawerFragment.setUp((DrawerLayout) findViewById(R.id.drawer_layout), mTool, R.id.navigation_drawer_fragmnet);
         drawerFragment.setDrawerListener(this);
 
@@ -38,20 +48,23 @@ public class MainActivity extends ActionBarActivity  implements NavigationDrawer
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            return true;
+        }
+        if (id == R.id.logout) {
+            SharedPreferences pref = MainActivity.this.getSharedPreferences(getString(R.string.sharedClass), Context.MODE_PRIVATE);
+            pref.edit().clear().apply();
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class );
+            startActivity(intent);
+            finish();
             return true;
         }
 
@@ -63,20 +76,20 @@ public class MainActivity extends ActionBarActivity  implements NavigationDrawer
 
         switch (position){
             case 1:
-               /* fragment =  new SettingFragment();
-                title = getString(R.string.settings);*/
+                fragment =  new ProfileFragment();
+                title = getString(R.string.profile);
                 break;
             case 2:
-               /* fragment =  new MoviesFragment();
-                title = getString(R.string.peli);*/
+                fragment =  new CoursesFragment();
+                title = getString(R.string.courses);
                 break;
             case 3:
-              /*  fragment =  new FavoritesFragment();
-                title = getString(R.string.favorites);*/
+                fragment =  new MyCoursesFragment();
+                title = getString(R.string.myCourses);
                 break;
             case 4:
-              /*  fragment =  new HoursFragment();
-                title = getString(R.string.hours);*/
+                fragment =  new CategoryFragment();
+                title = getString(R.string.category);
                 break;
             default:
 

@@ -2,4 +2,22 @@
 <resources>
     <string name="action_settings">Ajustes</string>
     <string name="app">Learn Geek - Courses</string>
+
+    <string name="loggin">Iniciar Sesion</string>
+    <string name="user">Nombre de Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="register">Registrarse</string>
+    <string name="rem">Recuerdarme!!</string>
+    <string name="password2">Confirma tu contraseña</string>
+    <string name="email">Correo Electronico</string>
+    <string name="createReg">Crear Usuario</string>
+    <string name="nameUser">Nombres y Apellidos</string>
+    <string name="profile">Perfil</string>
+    <string name="courses">Cursos</string>
+    <string name="myCourses">Mis Cursos</string>
+    <string name="category">Categorias</string>
+    <string name="welcome">Bienvenido a nuestra aplicacion</string>
+    <string name="setting">Ajustes</string>
+    <string name="logout">Cerrar Sesion</string>
+
 </resources>

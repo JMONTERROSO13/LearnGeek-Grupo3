@@ -1,6 +1,10 @@
 package gt.edu.kinal.jmonterroso.learngeek_grupo3;
 
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
@@ -14,6 +18,7 @@ import android.support.v7.widget.Toolbar;
 
 import gt.edu.kinal.jmonterroso.learngeek_grupo3.adapters.NavigationDrawerAdapter;
 import gt.edu.kinal.jmonterroso.learngeek_grupo3.helpers.RecyclerItemClickListener;
+import gt.edu.kinal.jmonterroso.learngeek_grupo3.helpers.SQLite;
 
 
 /**
@@ -32,22 +37,44 @@ public class NavigationDrawerFragment extends Fragment {
     private View containerView;
 
     private int ICONS[] = {R.drawable.ic_rows,R.drawable.ic_rows, R.drawable.ic_rows, R.drawable.ic_rows };
-    // private String TITLES[] = {String.valueOf(R.string.settings), String.valueOf(R.string.peli),String.valueOf(R.string.favorites),String.valueOf(R.string.hours)};
-    private String TITLES[] = {"Ajustes","Peliculas","Favoritas","Horarios"};
-    private String NAME = "Jorge Monterroso";
-    private String EMAIL = "jmonterroso-2013175@kinal.edu.gt";
-    private int PROFILE = R.mipmap.ic_launcher;
+    private String TITLES[] = {"Perfil","Cursos","Mis Cursos","Categorias"};
+    private String NAME = null;
+    private String EMAIL = null;
+    private int PROFILE = R.drawable.ic_profile;
 
+    private SQLite sqLite;
+    private SQLiteDatabase db;
 
     public NavigationDrawerFragment() {
 
     }
 
+    public String UserEmail(String users){
+        String email = null;
+        sqLite = new SQLite(getActivity().getBaseContext());
+        db = sqLite.getReadableDatabase();
+        String Sql = "SELECT email FROM User WHERE userName='"+users+"'";
+        Cursor cu = db.rawQuery(Sql, null);
+        if (cu.moveToFirst())
+        {
+            do {
+                email = cu.getString(0);
+            } while (cu.moveToNext());
+        }
+        db.close();
+
+        return email;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
+
+        SharedPreferences prefs = getActivity().getSharedPreferences(getString(R.string.sharedClass), Context.MODE_PRIVATE);
+        String names = prefs.getString(getString(R.string.userRemembered), "");
+        NAME = names;
+        EMAIL = UserEmail(names);
 
         mRecyclerView = (RecyclerView) v.findViewById(R.id.RecyclerView);
         mRecyclerView.setHasFixedSize(true);

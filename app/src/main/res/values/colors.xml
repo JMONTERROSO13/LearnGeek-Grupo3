@@ -9,4 +9,7 @@
     <color name="backgroundCl" >#00a9ff</color>
     <color name="backgroundNJ" >#ff5600</color>
     <color name="title">#37474F</color>
+    <color name="cardText">#ffe3e3e3</color>
+    <color name="cardBack">#8c000000</color>
+
 </resources>

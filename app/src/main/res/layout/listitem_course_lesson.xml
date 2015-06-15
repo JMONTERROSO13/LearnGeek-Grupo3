@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="@color/background">
+
+    <TextView
+        android:id="@+id/nameCourseL"
+        android:text="CategoryName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/title"
+        android:textSize="20sp"
+        android:textStyle="italic|bold"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/descriptionCourseL"
+        android:text="CategoryDes"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/title"
+        android:textSize="15sp"
+        android:layout_marginTop="3dp"
+        android:textStyle="italic"
+        />
+
+    <TextView
+        android:id="@+id/refL"
+        android:text="CategoryName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/cl"
+        android:textSize="15sp"
+        android:textStyle="italic|bold"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true" />
+
+    <VideoView
+        android:id="@+id/viedoL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        />
+
+
+</LinearLayout>

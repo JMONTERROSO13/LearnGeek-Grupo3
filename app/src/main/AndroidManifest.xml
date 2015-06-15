@@ -20,7 +20,22 @@
             android:name=".MainActivity"
             android:label="@string/app" >
         </activity>
-
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/loggin" >
+        </activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:label="@string/register" >
+        </activity>
+        <activity
+            android:name=".CategoryActivity"
+            android:label="@string/title_activity_category" >
+        </activity>
+        <activity
+            android:name=".CourseActivity"
+            android:label="@string/title_activity_course" >
+        </activity>
     </application>
 
 </manifest>
